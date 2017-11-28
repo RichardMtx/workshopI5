@@ -3455,13 +3455,9 @@
 				text-decoration: none;
 			}
 
-			#header > .logo span {
-				font-weight: 300;
-				font-size: .75rem;
-				color: rgba(255, 255, 255, 0.5);
-			}
             header > .logo span img{
 				height: 20px;
+                vertical-align: middle;
 			}
 
 		#header > a {
