@@ -3460,6 +3460,9 @@
 				font-size: .75rem;
 				color: rgba(255, 255, 255, 0.5);
 			}
+            header > .logo span img{
+				height: 20px;
+			}
 
 		#header > a {
 			-moz-transition: color 0.2s ease-in-out;
@@ -3754,9 +3757,8 @@
 			color: #FFF;
 		}
 
-        #banner h1 .byca{
-            font-weight: 200 !important;
-            font-size: 1em !important;
+        #banner h1 .byca img{
+            height: 45px;
         }
 
 		#banner p {
@@ -3816,6 +3818,9 @@
 
 		@media screen and (max-width: 736px) {
 
+            #header > .logo {
+                display: none;
+            }
 			#banner {
 				min-height: 0;
 				height: auto !important;
@@ -3843,6 +3848,10 @@
 				#banner .button {
 					width: 100%;
 				}
+            
+                #banner h1 .byca img{
+                    height: 25px;
+                }
 
 		}
 
