@@ -1,0 +1,57 @@
+<html>
+
+<head>
+	<title>Les Hérissons by CA</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="/css/bootstrap.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+</head>
+
+<body>
+
+	<!-- Header -->
+	<header id="header" class="reveal">
+		<div class="logo">
+			<a href="/">
+				<span>Les Hérissons</span>
+				<span class="byca">
+					<img src="/images/byca.png">
+				</span>
+			</a>
+		</div>
+		<a href="#menu" class="toggle"></a>
+		{{#if user}}
+		<a href="/">Dashboard</a>
+		<a href="/users/logout">Logout</a>
+		{{else}}
+		<a href="/users/login">Login</a>
+		<a href="/users/register">Register</a>
+		{{/if}}
+		</a>
+	</header>
+
+	<section id="banner" data-video="/images/banner">
+		<div class="inner">
+			<h1>Les Hérissons
+				<span class="byca">
+					<img src="/images/byca.png" />
+				</span>
+			</h1>
+			<p>Parce que l'insécurité dans les paiements entre particuliers, ça pique !</p>
+			<a href="/services" class="button special scrolly">Je découvre le service</a>
+		</div>
+	</section>
+
+	<!-- Scripts -->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.scrolly.min.js"></script>
+	<script src="/js/jquery.scrollex.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/util.js"></script>
+	<script src="/js/main.js"></script>
+
+</body>
+
+</html>
