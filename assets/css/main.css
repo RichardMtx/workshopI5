@@ -3819,10 +3819,6 @@
 
 		@media screen and (max-width: 1280px) {
 
-			#banner video {
-				display: none;
-			}
-
 		}
 
 		@media screen and (max-width: 736px) {
@@ -3830,6 +3826,11 @@
             #header > .logo {
                 display: none;
             }
+            
+            #banner video {
+				display: none;
+			}
+            
 			#banner {
 				min-height: 0;
 				height: auto !important;
