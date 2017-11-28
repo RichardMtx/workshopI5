@@ -3475,7 +3475,7 @@ header>.logo span img {
 		right: 0;
 		top: 0;
 		visibility: hidden;
-		width: 20em;
+		width: auto;
 		z-index: 10002;
 	}
 	#header>a {
@@ -3552,7 +3552,7 @@ header>.logo span img {
 	position: fixed;
 	right: 0;
 	top: 0;
-	width: 20em;
+	width: 13em;
 	z-index: 10002;
 }
 
@@ -3590,24 +3590,21 @@ header>.logo span img {
 
 #menu .close {
 	text-decoration: none;
-	-moz-transition: color 0.2s ease-in-out;
-	-webkit-transition: color 0.2s ease-in-out;
-	-ms-transition: color 0.2s ease-in-out;
-	transition: color 0.2s ease-in-out;
-	-webkit-tap-highlight-color: transparent;
 	border: 0;
 	color: #fff;
 	cursor: pointer;
 	display: block;
 	height: 3.25em;
 	line-height: 3.25em;
-	padding-right: 1.25em;
+	padding-right: 21px;
 	position: absolute;
 	right: 0;
 	text-align: right;
-	top: 0;
+	top: -18px;
 	vertical-align: middle;
 	width: 7em;
+	font-size: 20px;
+	opacity: 1 !important;
 }
 
 #menu .close:before {
@@ -3637,7 +3634,7 @@ header>.logo span img {
 		display: inline-block;
 		padding: 0;
 		margin: 0;
-		top: 1.7em;
+		top: 0.8em;
 		width: 100%;
 		height: max-content;
 		text-align: right;
@@ -3783,9 +3780,6 @@ header>.logo span img {
 }
 
 @media screen and (max-width: 736px) {
-	#header>.logo {
-		display: none;
-	}
 	#banner {
 		min-height: 0;
 		height: auto !important;
