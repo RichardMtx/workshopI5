@@ -58,6 +58,18 @@
 		-webkit-text-size-adjust: none;
 	}
 
+    .alert_banner{
+        display: block;
+        font-size: 0.8em;
+        position: relative;
+        z-index: 100000;
+        text-align: center;
+        width: 100%;
+        background-color: rgba(211, 47, 47, 1);
+        color: #FFFFFF;
+        padding: 5px 30px 5px 30px;
+    }
+
 /* Box Model */
 
 	*, *:before, *:after {
