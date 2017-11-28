@@ -1,13 +1,13 @@
 {
-  "name": "loginapp",
+  "name": "LesHerissons",
   "version": "1.0.0",
-  "description": "Simple authentication system",
+  "description": " Plateforme de paiements sécurisés pour particuliers",
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Brad Traversy",
+  "author": "EPSI BORDEAUX I5 - Groupe A (2017-2018)",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "*",
