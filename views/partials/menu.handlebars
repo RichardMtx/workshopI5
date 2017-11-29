@@ -8,19 +8,35 @@
             </span>
         </a>
     </div>
-    <a href="#menu" class="toggle"><span>Menu</span></a>
+    <a href="#menu" class="toggle">
+        <span>Menu</span>
+    </a>
 
     <!-- Nav -->
     <nav id="menu">
         <ul class="links">
-            <li><a href="#">Fonctionnement</a></li>
-            <li><a href="#">A propos</a></li>
-            <li><a href="#">FAQ</a></li>
+            <li>
+                <a href="/fonctionnement">Fonctionnement</a>
+            </li>
+            <li>
+                <a href="/apropos">A propos</a>
+            </li>
+            <li>
+                <a href="/faq">FAQ</a>
+            </li>
             {{#if user}}
-            <li><a href="/dashboard">Tableau de bord</a></li>
-            <li><a href="/users/logout">Se déconnecter</a></li> {{else}}
-            <li><a href="/users/login">Se connecter</a></li>
-            <li><a href="/users/register">Créer un compte</a></li> {{/if}}
+            <li>
+                <a href="/dashboard">Tableau de bord</a>
+            </li>
+            <li>
+                <a href="/users/logout">Se déconnecter</a>
+            </li> {{else}}
+            <li>
+                <a href="/users/login">Se connecter</a>
+            </li>
+            <li>
+                <a href="/users/register">Créer un compte</a>
+            </li> {{/if}}
         </ul>
     </nav>
 </header>

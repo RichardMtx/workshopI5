@@ -22,9 +22,19 @@ router.get('/dashboard', ensureAuthenticated, function (req, res) {
 	res.render('index');
 });
 
-// Get Homepage
-router.get('/services', function (req, res) {
-	res.render('services');
+// Get fonctionnement
+router.get('/fonctionnement', function (req, res) {
+	res.render('fonctionnement');
+});
+
+// Get A propos
+router.get('/apropos', function (req, res) {
+	res.render('apropos');
+});
+
+// GetFAQ
+router.get('/faq', function (req, res) {
+	res.render('faq');
 });
 
 
