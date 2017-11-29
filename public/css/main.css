@@ -3835,7 +3835,7 @@ body.is-loading #banner:before {
 /* Footer */
 
 .footer {
-	padding: 0rem 0 1rem 0;
+	padding: 0.4rem;
 	position: relative;
 	margin: 0;
 	position: absolute;
@@ -3856,15 +3856,8 @@ body.is-loading #banner:before {
 #footer .copyright {
 	color: #bbb;
 	font-size: 0.9rem;
-	margin: 0 0 2rem 0;
 	padding: 0;
 	text-align: center;
-}
-
-@media screen and (max-width: 736px) {
-	#footer {
-		padding: 3rem 0 1rem 0;
-	}
 }
 
 
