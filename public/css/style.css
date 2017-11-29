@@ -89,3 +89,13 @@ body {
 footer {
   margin-top: 40px;
 }
+
+.side-crop {
+  max-height: 200px;
+  overflow: hidden;
+}
+
+.side-crop img {
+  max-width: initial;
+  /* Maybe optional. See note below */
+}

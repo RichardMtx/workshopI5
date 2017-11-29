@@ -13,6 +13,12 @@ var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/lesherissons', {
   useMongoClient: true
+}, function (err) {
+  if (err) {
+    throw err;
+  } else {
+    console.log("connecté à la base")
+  }
 });
 var db = mongoose.connection;
 
