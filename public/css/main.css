@@ -3838,6 +3838,10 @@ body.is-loading #banner:before {
 	padding: 0rem 0 1rem 0;
 	position: relative;
 	margin: 0;
+	position: absolute;
+    bottom: 0;
+    width: 100%;
+
 }
 
 .footer>.inner {
