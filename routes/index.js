@@ -19,7 +19,7 @@ function ensureAuthenticated(req, res, next) {
 
 // Get dashboard
 router.get('/dashboard', ensureAuthenticated, function (req, res) {
-	res.render('index');
+	res.render('dashboard');
 });
 
 // Get fonctionnement
