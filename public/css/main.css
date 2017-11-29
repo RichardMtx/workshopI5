@@ -1511,7 +1511,7 @@ body {
 }
 
 body {
-	background: #fff;
+	background: #f2f2f2;;
 }
 
 body.is-loading *,
@@ -1565,7 +1565,7 @@ html {
 }
 
 body {
-	background-color: #fff;
+	background-color: #f2f2f2;
 	color: #444;
 }
 
