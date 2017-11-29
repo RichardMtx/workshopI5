@@ -11,8 +11,6 @@ var LocalStrategy = require('passport-local').Strategy;
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
 
-app.use(favicon(path.join(__dirname,'public','images','lesherissons.ico')));
-
 mongoose.connect('mongodb://localhost/lesherissons', {
   useMongoClient: true
 });
