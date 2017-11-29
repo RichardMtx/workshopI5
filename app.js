@@ -1,3 +1,4 @@
+require('dotenv').config()
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -11,8 +12,13 @@ var LocalStrategy = require('passport-local').Strategy;
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/lesherissons', {
+mongoose.connect('mongodb://' + process.env.USERLH + ':' + process.env.PASSLH + '@lesherissons.fr/lesherissons', {
   useMongoClient: true
+}, function (err) {
+  if (err)
+    console.log('erreur db');
+  else
+    console.log('db OK')
 });
 var db = mongoose.connection;
 
