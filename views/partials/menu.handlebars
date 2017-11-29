@@ -1,0 +1,26 @@
+<!-- Header -->
+<header id="header" class="reveal">
+    <div class="logo">
+        <a href="/">
+            <span>Les Hérissons</span>
+            <span class="byca">
+                <img src="/images/byca.png">
+            </span>
+        </a>
+    </div>
+    <a href="#menu" class="toggle"><span>Menu</span></a>
+
+    <!-- Nav -->
+    <nav id="menu">
+        <ul class="links">
+            <li><a href="#">Fonctionnement</a></li>
+            <li><a href="#">A propos</a></li>
+            <li><a href="#">FAQ</a></li>
+            {{#if user}}
+            <li><a href="/dashboard">Tableau de bord</a></li>
+            <li><a href="/users/logout">Se déconnecter</a></li> {{else}}
+            <li><a href="/users/login">Se connecter</a></li>
+            <li><a href="/users/register">Créer un compte</a></li> {{/if}}
+        </ul>
+    </nav>
+</header>
