@@ -8,10 +8,19 @@ var VenteSchema = mongoose.Schema({
 	emailVendeur: {
 		type: String
 	},
-	numeroTel: {
+	numeroTelAcheteur: {
+		type: String
+	},
+	numeroTelVendeur: {
 		type: String
 	},
 	adresseLivraison: {
+		type: String
+	},
+	adresseVendeur: {
+		type: String
+	},
+	dateDepotColis: {
 		type: String
 	},
 	montantVente: {
@@ -27,6 +36,15 @@ var VenteSchema = mongoose.Schema({
 		type: String
 	},
 	url: {
+		type: String
+	},
+	createdTypeBy: {
+		type: String
+	},
+	statutAcheteur: {
+		type: String
+	},
+	statutVendeur: {
 		type: String
 	}
 });
