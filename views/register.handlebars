@@ -1,6 +1,7 @@
 <h2 class="page-header">Créer un compte</h2>
 {{#if errors}}
-<div class="alert alert-danger">{{#each errors}} -{{msg}}<br> {{/each}} </div>{{/if}}
+<div class="alert alert-danger">{{#each errors}} -{{msg}}
+  <br> {{/each}} </div>{{/if}}
 <form method="post" action="/users/register">
   <div class="form-group">
     <label>Prénom et Nom</label>
@@ -22,5 +23,5 @@
     <label>Confirmation du mot de passe</label>
     <input type="password" class="form-control" placeholder="Password" name="password2">
   </div>
-  <button type="submit" class="btn btn-default">S'inscrire</button>
+  <button type="submit" class="btn btn-primary">S'inscrire</button>
 </form>
