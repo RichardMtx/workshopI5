@@ -37,10 +37,23 @@
 				res.render('vente-complete-vendeur', {
 					vente: vente
 				});
-			} else if (vente.state == 'COMPLETED') {
+			} else if (((vente.state == 'COMPLETED') && vente.statutAcheteur != 'true') || ((vente.state == 'COMPLETED') && vente.statutVendeur != 'true')) {
+				console.log('test1 :' + vente.statutVendeur);
+				console.log('test2 :' + vente.statutAcheteur);
 				res.render('vente-complete-validation', {
 					vente: vente
 				});
+			} else if ((vente.state == 'COMPLETED') && (vente.statutVendeur == 'true' && vente.statutAcheteur == 'true')) {
+				if (req.user.email == vente.emailAcheteur) {
+
+					res.render('payer-acheteur', {
+						vente: vente
+					});
+				} else {
+					res.render('payer-wait', {
+						vente: vente
+					});
+				}
 			} else {
 				res.render('vente-wait', {
 					vente: vente
@@ -73,9 +86,6 @@
 				res.redirect('/ventes/' + req.params.id);
 			});
 
-
-
-
 		} else if (req.body.completedata == 'vendeur') {
 			var data = req.body;
 
@@ -96,6 +106,30 @@
 				res.redirect('/ventes/' + req.params.id);
 			});
 
+		} else if (req.body.validationTransaction == 'validationTransaction') {
+			var id = req.params.id;
+			Vente.getVenteByURL(id, function (err, vente) {
+				if (req.user.email == vente.emailAcheteur) {
+					var updateVente = {
+						statutAcheteur: 'true',
+					};
+
+				} else {
+					var updateVente = {
+						statutVendeur: 'true',
+					};
+				}
+
+				Vente.findOneAndUpdate({
+					'url': req.params.id
+				}, updateVente, function (err, vente) {
+					if (err) return res.send(500, {
+						error: err
+					});
+					console.log("succesfully saved");
+					res.redirect('/ventes/' + req.params.id);
+				});
+			});
 		}
 	});
 
@@ -111,8 +145,6 @@
 
 	// Get new vente
 	router.post('/new', ensureAuthenticated, function (req, res) {
-
-		console.log("passe");
 
 		var state = '';
 
@@ -142,7 +174,7 @@
 			state: state,
 			createdTypeBy: data.whoami,
 			url: url,
-			createdAt: moment().format('Do MMMM  YYYY')
+			createdAtFormat: moment().format('Do MMMM  YYYY à HH:mm')
 		});
 
 		Vente.createVente(newVente, function (err, vente) {
