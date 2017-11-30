@@ -24,16 +24,16 @@ router.get('/new', ensureAuthenticated, function (req, res) {
 // Get new vente
 router.get('/:id', ensureAuthenticated, function (req, res) {
 	var id = req.params.id;
+
 	Vente.getVenteByURL(id, function (err, vente) {
 		if (err)
 			res.render('/');
 
-		if(vente.state == 'NEWBYVENDEUR' && req.user.email != vente.emailVendeur){
+		if (vente.state == 'NEWBYVENDEUR' && req.user.email != vente.emailVendeur) {
 			res.render('vente-complete-acheteur', {
 				vente: vente
 			});
-		}
-		else{
+		} else {
 			res.render('vente-view', {
 				vente: vente
 			});
@@ -41,25 +41,29 @@ router.get('/:id', ensureAuthenticated, function (req, res) {
 	})
 });
 
-router.post('/:id', ensureAuthenticated, function (req, res) {
+router.post('/:id([a-zA-Z0-9]{5})', ensureAuthenticated, function (req, res) {
 
-		var data = req.body;
+	var data = req.body;
 
-		var updateVente = {
-			emailAcheteur: data.emailAcheteur,
-			numeroTelAcheteur: data.numeroTel,
-			adresseLivraison: data.adresseLivraison,
-			montantVente: data.montantVente,
-			montantLivraison: data.montantLivraison,
-			montantTotal: data.montantTotal,
-			state: 'Completed',
-		};
+	var updateVente = {
+		emailAcheteur: data.emailAcheteur,
+		numeroTelAcheteur: data.numeroTel,
+		adresseLivraison: data.adresseLivraison,
+		montantVente: data.montantVente,
+		montantLivraison: data.montantLivraison,
+		montantTotal: data.montantTotal,
+		state: 'Completed',
+	};
 
-		Vente.findOneAndUpdate({'url':req.params.id},updateVente,function(err,vente){
-			if (err) return res.send(500, { error: err });
-    		console.log("succesfully saved");
-    		res.redirect('/ventes/'+req.params.id);
+	Vente.findOneAndUpdate({
+		'url': req.params.id
+	}, updateVente, function (err, vente) {
+		if (err) return res.send(500, {
+			error: err
 		});
+		console.log("Vente /" + req.params.id + " mise à jour");
+		res.redirect('/ventes/' + req.params.id);
+	});
 
 });
 
@@ -109,7 +113,7 @@ router.post('/new', ensureAuthenticated, function (req, res) {
 
 	Vente.createVente(newVente, function (err, vente) {
 		if (err) throw err;
-		console.log(vente);
+		console.log("Vente /" + url + " créée");
 	});
 
 	res.redirect('/ventes/' + url)
