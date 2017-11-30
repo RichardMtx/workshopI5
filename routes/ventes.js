@@ -26,11 +26,40 @@ router.get('/:id', ensureAuthenticated, function (req, res) {
 	Vente.getVenteByURL(id, function (err, vente) {
 		if (err)
 			res.render('/');
-		console.log(vente);
-		res.render('vente-view', {
-			vente: vente
-		});
+
+		if(vente.state == 'NEWBYVENDEUR' && req.user.email != vente.emailVendeur){
+			res.render('vente-complete-acheteur', {
+				vente: vente
+			});
+		}
+		else{
+			res.render('vente-view', {
+				vente: vente
+			});
+		}
 	})
+});
+
+router.post('/:id', ensureAuthenticated, function (req, res) {
+
+		var data = req.body;
+
+		var updateVente = {
+			emailAcheteur: data.emailAcheteur,
+			numeroTelAcheteur: data.numeroTel,
+			adresseLivraison: data.adresseLivraison,
+			montantVente: data.montantVente,
+			montantLivraison: data.montantLivraison,
+			montantTotal: data.montantTotal,
+			state: 'Completed',
+		};
+
+		Vente.findOneAndUpdate({'url':req.params.id},updateVente,function(err,vente){
+			if (err) return res.send(500, { error: err });
+    		console.log("succesfully saved");
+    		res.redirect('/ventes/'+req.params.id);
+		});
+
 });
 
 function makeid() {
