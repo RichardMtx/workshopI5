@@ -2688,12 +2688,6 @@ table.alt tbody tr td {
 	border-bottom-color: rgba(255, 255, 255, 0.25);
 }
 
-.wrapper.style3 {
-    color: #ffffff;
-    background: url('../../images/pic01.jpg');
-    background-size: cover;
-}
-
 .wrapper.style3 h3{
     font-size: 2em;
 }
@@ -3091,7 +3085,7 @@ table.alt tbody tr td {
 .wrapper.style3 {
 	background-color: #000;
 	color: #bfbfbf;
-	background-image: url(../../images/bg.jpg);
+	background-image: url(../../images/pic01.jpg);
 	background-size: cover;
 	background-attachment: fixed;
 	background-position: center;
@@ -3341,7 +3335,7 @@ table.alt tbody tr td {
 	transition-delay: 1.25s;
 	content: '';
 	display: block;
-	background-color: rgba(0, 0, 0, 0.95);
+	background-color: rgba(0, 0, 0, 0.50);
 	height: 100%;
 	left: 0;
 	opacity: 0.75;
