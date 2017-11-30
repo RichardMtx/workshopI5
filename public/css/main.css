@@ -156,6 +156,14 @@ body {
 	-webkit-text-size-adjust: none;
 }
 
+h1{
+    font-size: 3em;
+}
+
+h3{
+    font: 2em;
+}
+
 .alert_banner {
 	display: block;
 	font-size: 0.8em;
@@ -268,6 +276,12 @@ body {
 	.container {
 		width: 90%;
 	}
+    h1{
+        font-size: 1.5em;
+    }
+    h3{
+        font-size: 1.2em;
+    }
 }
 
 @media screen and (max-width: 736px) {
@@ -1600,6 +1614,7 @@ i {
 
 p {
 	margin: 0 0 2rem 0;
+    font-weight: 0;
 }
 
 sub {
@@ -2213,6 +2228,16 @@ table.alt tbody tr td {
 	border-bottom-color: rgba(255, 255, 255, 0.25);
 }
 
+.wrapper.style3 {
+    color: #ffffff;
+    background: url('../../images/pic01.jpg');
+    background-size: cover;
+}
+
+.wrapper.style3 h3{
+    font-size: 2em;
+}
+
 .wrapper.style1 .box {
 	border-color: rgba(255, 255, 255, 0.25);
 }
@@ -2226,9 +2251,6 @@ table.alt tbody tr td {
 @media screen and (max-width: 980px) {
 	.wrapper>.inner {
 		width: 90%;
-	}
-	.wrapper.style3 {
-		background-attachment: scroll;
 	}
 }
 
