@@ -26,10 +26,10 @@
 		</div>
 	</div>
 
-	<section id="banner" data-video="/videos/lesherissons">
+	<section id="banner">	
+		<video id="lhmp4" width="100%" height="100%" src="/videos/lesherissons.mp4" frameborder="0"></video>
 		<div class="inner">
-			<p>Parce que l'insécurité dans les paiements entre particuliers, ça pique !</p>
-			<a href="/fonctionnement" class="button special scrolly">Je découvre le service</a>
+			<a href="#" id="video" class="button special scrolly">Je découvre le service</a>
 		</div>
 	</section>
 
@@ -101,7 +101,20 @@
 	<script src="/js/tether.min.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script>
-		$('#myModal').modal('show')
+		$('#myModal').modal('show');
+		$("#video").one('click', function(){	
+			$("#lhmp4").css('overflow','visible');				
+			$("#lhmp4").css('opacity','1');
+			$("#video").css('display','none');
+			$('#lhmp4').get(0).play();
+			setTimeout(function(){
+				$("#lhmp4").css('opacity','0');
+				$('#lhmp4').css('overflow','hidden');
+				$("#video").css('display','block');
+			}, 51000);
+			
+
+		});
 	</script>
 
 </body>
