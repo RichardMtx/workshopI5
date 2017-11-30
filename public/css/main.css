@@ -3819,9 +3819,15 @@ header>.logo span img {
 	z-index: 1;
 }
 
-@media screen and (max-width: 1280px) {
+/* @media screen and (max-width: 1280px) {
 	#banner video {
-		display: none;
+		display: block;
+	}
+} */
+
+@media screen and (max-width: 1500px){
+	#banner{
+		width: 100%;
 	}
 }
 
@@ -3853,9 +3859,30 @@ header>.logo span img {
 	}
 }
 
+@media screen and (max-width: 735px) {
+	#banner .button {
+		width: 40%;
+		font-size: 10px;
+		height: 20px;
+		line-height: 20px;
+		right:-10%;
+		bottom: -30px;
+		position: absolute;
+	}
+}
+
 @media screen and (max-width: 480px) {
 	#banner p {
 		font-size: 1em;
+	}
+	#banner .button {
+		width: 40%;
+		font-size: 10px;
+		height: 20px;
+		line-height: 20px;
+		right:-10%;
+		bottom: -30px;
+		position: absolute;
 	}
 }
 
