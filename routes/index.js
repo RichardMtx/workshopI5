@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
+var Vente = require('../models/vente');
+var User = require('../models/user');
+
 // Get Homepage
 router.get('/', function (req, res) {
 	res.render('home', {

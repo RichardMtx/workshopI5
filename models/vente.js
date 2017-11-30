@@ -1,48 +1,63 @@
-/* var mongoose = require('mongoose');
-var bcrypt = require('bcryptjs');
+var mongoose = require('mongoose');
 
-// User Schema
-var UserSchema = mongoose.Schema({
-	username: {
-		type: String,
-		index: true
-	},
-	password: {
+// Vente Schema
+var VenteSchema = mongoose.Schema({
+	emailAcheteur: {
 		type: String
 	},
-	email: {
+	emailVendeur: {
 		type: String
 	},
-	name: {
+	numeroTel: {
+		type: String
+	},
+	adresseLivraison: {
+		type: String
+	},
+	montantVente: {
+		type: String
+	},
+	montantLivraison: {
+		type: String
+	},
+	montantTotal: {
+		type: String
+	},
+	state: {
+		type: String
+	},
+	url: {
 		type: String
 	}
 });
 
-var User = module.exports = mongoose.model('User', UserSchema);
+var Vente = module.exports = mongoose.model('Vente', VenteSchema);
 
-module.exports.createUser = function (newUser, callback) {
-	bcrypt.genSalt(10, function (err, salt) {
-		bcrypt.hash(newUser.password, salt, function (err, hash) {
-			newUser.password = hash;
-			newUser.save(callback);
-		});
-	});
+module.exports.createVente = function (newVente, callback) {
+	newVente.save(callback);
 }
-
-module.exports.getUserByUsername = function (username, callback) {
+/* 
+module.exports.getVenteByUsername = function (username, callback) {
 	var query = {
 		username: username
 	};
-	User.findOne(query, callback);
+	Vente.findOne(query, callback);
+}
+ */
+module.exports.getVenteById = function (id, callback) {
+	Vente.findById(id, callback);
 }
 
-module.exports.getUserById = function (id, callback) {
-	User.findById(id, callback);
+module.exports.getVenteByURL = function (url, callback) {
+	var query = {
+		url: url
+	};
+	Vente.findOne(query, callback);
 }
 
-module.exports.comparePassword = function (candidatePassword, hash, callback) {
-	bcrypt.compare(candidatePassword, hash, function (err, isMatch) {
-		if (err) throw err;
-		callback(null, isMatch);
-	});
-} */
+module.exports.getVenteByEmail = function (email, callback) {
+	var query = {
+		email: email
+	};
+	Vente.findOne(query, callback);
+}
