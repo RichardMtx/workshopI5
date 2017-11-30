@@ -1949,7 +1949,7 @@ input[type="reset"].special,
 input[type="button"].special,
 button.special,
 .button.special {
-	background-color: #5AA6ED;
+	background-color: #2EC200;
 	color: #ffffff !important;
 }
 
@@ -1958,7 +1958,7 @@ input[type="reset"].special:hover,
 input[type="button"].special:hover,
 button.special:hover,
 .button.special:hover {
-	background-color: #71b2f0;
+	background-color: #2EC200;
 }
 
 input[type="submit"].special:active,
@@ -3683,17 +3683,32 @@ header>.logo span img {
 	-webkit-justify-content: center;
 	-ms-justify-content: center;
 	justify-content: center;
-	background-image: url("../../images/banner.jpg");
-	background-position: center;
+	background-image: url("../../images/çapique.jpg");
+	background-position: inherit;
 	background-size: cover;
 	background-repeat: no-repeat;
 	border-top: 0;
 	min-height: 100vh;
 	height: 100vh !important;
 	width: 100%;
+	max-width: 100%;
 	position: relative;
 	text-align: center;
 	overflow: hidden;
+}
+
+#lhmp4{
+	overflow: hidden;
+	opacity: 0;
+}
+
+.close{
+	font-size: 2em;
+	color: white;
+	border: 1px white solid;
+	border-radius: 50%;
+	height: 50px;
+	width: 50px;
 }
 
 #banner .inner {
@@ -3706,8 +3721,10 @@ header>.logo span img {
 	-ms-transition: opacity 1s ease, -ms-transform 1s ease;
 	transition: opacity 1s ease, transform 1s ease;
 	opacity: 1;
-	position: relative;
+	position: absolute;
 	z-index: 2;
+	right: 16.5%;
+	top:70%;
 }
 
 #banner h1 {
@@ -3757,7 +3774,7 @@ header>.logo span img {
 	transition-delay: 1.25s;
 	content: '';
 	display: block;
-	background-color: rgba(0, 0, 0, 0.75);
+	/* background-color: rgba(0, 0, 0, 0.75); */
 	height: 100%;
 	left: 0;
 	opacity: 0.45;
