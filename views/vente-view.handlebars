@@ -1,11 +1,58 @@
-<!-- Ca va qu'on voit les ventes -->
 <div class="container">
-
-    <pre>
-        {{vente}}
-    </pre>
+    <div class="row">
+        <label class="col-md-6">Email de l'acheteur</label>
+        <div class="col-md-6">
+            {{vente.emailAcheteur}}
+        </div>
+    </div>
+    <div class="row">
+        <label class="col-md-6">Email du vendeur</label>
+        <div class="col-md-6">
+            {{vente.emailVendeur}}
+        </div>
+    </div>
+    <div class="row">
+        <label class="col-md-6">Numéro de téléphone de l'acheteur</label>
+        <div class="col-md-6">
+            {{vente.NumeroTelAcheteur}}
+        </div>
+    </div>
+    <div class="row">
+        <label class="col-md-6">Adresse de livraison</label>
+        <div class="col-md-6">
+            {{vente.adresseLivraison}}
+        </div>
+    </div>
+    <div class="row">
+        <label class="col-md-6">Montant de la vente</label>
+        <div class="col-md-6">
+            {{vente.montantVente}} €
+        </div>
+    </div>
+    <div class="row">
+        <label class="col-md-6">Montant de la livraison</label>
+        <div class="col-md-6">
+            {{vente.montantLivraison}} €
+        </div>
+    </div>
+    <div class="row">
+        <label class="col-md-6">Montant total</label>
+        <div class="col-md-6">
+            {{vente.montantTotal}}
+        </div>
+    </div>
+    <div class="row">
+        <label class="col-md-6">Etat actuel de la vente</label>
+        <div class="col-md-6">
+            <h4><span class="badge badge-info">
+                {{vente.state}}
+                </span></h4>
+        </div>
+    </div>
+    <div class="row">
+        <label class="col-md-6">Date de création de la vente</label>
+        <div class="col-md-6">
+            {{vente.createdAtFormat}}
+        </div>
+    </div>
 </div>
-
-<script>
-
-</script>

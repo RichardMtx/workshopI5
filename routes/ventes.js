@@ -29,7 +29,7 @@ router.get('/:id', ensureAuthenticated, function (req, res) {
 		if (err)
 			res.render('/');
 
-		if (vente.state == 'NEWBYVENDEUR' && req.user.email != vente.emailVendeur) {
+		if (vente.state == 'A compléter' && req.user.email == vente.emailVendeur) {
 			res.render('vente-complete-acheteur', {
 				vente: vente
 			});
@@ -52,7 +52,7 @@ router.post('/:id([a-zA-Z0-9]{5})', ensureAuthenticated, function (req, res) {
 		montantVente: data.montantVente,
 		montantLivraison: data.montantLivraison,
 		montantTotal: data.montantTotal,
-		state: 'Completed',
+		state: 'En cours',
 	};
 
 	Vente.findOneAndUpdate({
@@ -79,16 +79,11 @@ function makeid() {
 
 // Get new vente
 router.post('/new', ensureAuthenticated, function (req, res) {
-
-	var state = '';
-
 	if (req.body.whoami == 'acheteur') {
 		req.body.emailAcheteur = req.user.email;
-		state = "NEWBYACHETEUR";
 	}
 	if (req.body.whoami == 'vendeur') {
 		req.body.emailVendeur = req.user.email;
-		state = "NEWBYVENDEUR";
 	}
 
 	var data = req.body;
@@ -105,10 +100,10 @@ router.post('/new', ensureAuthenticated, function (req, res) {
 		numeroTelVendeur: data.telVendeur,
 		adresseVendeur: data.adresseVendeur,
 		dateDepotColis: data.datedepotVendeur,
-		state: state,
+		state: 'A compléter',
 		createdTypeBy: data.whoami,
 		url: url,
-		createdAt: moment().format('Do MMMM  YYYY')
+		createdAtFormat: moment().format('Do MMMM  YYYY à HH:mm')
 	});
 
 	Vente.createVente(newVente, function (err, vente) {

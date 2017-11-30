@@ -1553,7 +1553,7 @@ form .field.half.first {
 
 label {
 	display: block;
-	font-size: 0.9rem;
+	font-size: 1rem;
 	font-weight: 400;
 	margin: 0 0 1rem 0;
 }
@@ -3343,10 +3343,10 @@ header>.logo span img {
 } */
 
 @media screen and (max-width: 1500px) {
-    #banner {
+	#banner {
 		min-height: 100%;
-        max-height: 100%;
-        background-size: 100% auto;
+		max-height: 100%;
+		background-size: 100% auto;
 		height: auto !important;
 		padding: 6rem 2rem 4rem 2rem;
 	}
@@ -3355,19 +3355,18 @@ header>.logo span img {
 @media screen and (max-width: 1200px) {
 	#banner {
 		min-height: 80%;
-        max-height: 80%;
-        background-size: 100% auto;
+		max-height: 80%;
+		background-size: 100% auto;
 		height: auto !important;
 		padding: 6rem 2rem 4rem 2rem;
 	}
 }
 
-
 @media screen and (max-width: 736px) {
 	#banner {
 		min-height: 50%;
-        max-height: 50%;
-        background-size: 100% auto;
+		max-height: 50%;
+		background-size: 100% auto;
 		height: auto !important;
 		padding: 6rem 2rem 4rem 2rem;
 	}
@@ -3390,7 +3389,7 @@ header>.logo span img {
 		height: 20px;
 		line-height: 20px;
 		top: 50%;
-        right: -10%;
+		right: -10%;
 		position: absolute;
 	}
 	#banner h1 .byca img {
@@ -3401,18 +3400,17 @@ header>.logo span img {
 @media screen and (max-width: 650px) {
 	#banner {
 		min-height: 40%;
-        max-height: 40%;
-        background-size: 100% auto;
+		max-height: 40%;
+		background-size: 100% auto;
 		height: auto !important;
 		padding: 6rem 2rem 4rem 2rem;
 	}
-    
-    #banner .button {
+	#banner .button {
 		font-size: 10px;
 		height: 20px;
 		line-height: 20px;
 		top: 50%;
-        right: -10%;
+		right: -10%;
 		position: absolute;
 	}
 }
@@ -3421,21 +3419,19 @@ header>.logo span img {
 	#banner p {
 		font-size: 1em;
 	}
-    
-    #banner {
+	#banner {
 		min-height: 30%;
-        max-height: 30%;
-        background-size: 100% auto;
+		max-height: 30%;
+		background-size: 100% auto;
 		height: auto !important;
 		padding: 6rem 2rem 4rem 2rem;
 	}
-    
-    #banner .button {
+	#banner .button {
 		font-size: 10px;
 		height: 20px;
 		line-height: 20px;
 		top: 50%;
-        right: -10%;
+		right: -10%;
 		position: absolute;
 	}
 }

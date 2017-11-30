@@ -47,7 +47,7 @@ var VenteSchema = mongoose.Schema({
 	statutVendeur: {
 		type: String
 	},
-	createdAt: {
+	createdAtFormat: {
 		type: String
 	}
 });
@@ -57,14 +57,7 @@ var Vente = module.exports = mongoose.model('Vente', VenteSchema);
 module.exports.createVente = function (newVente, callback) {
 	newVente.save(callback);
 }
-/* 
-module.exports.getVenteByUsername = function (username, callback) {
-	var query = {
-		username: username
-	};
-	Vente.findOne(query, callback);
-}
- */
+
 module.exports.getVenteById = function (id, callback) {
 	Vente.findById(id, callback);
 }
@@ -83,5 +76,5 @@ module.exports.getVentesByEmail = function (email, callback) {
 		}, {
 			emailVendeur: email
 		}]
-	}, callback);
+	}).sort('-_id').exec(callback);
 }
