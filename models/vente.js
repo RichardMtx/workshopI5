@@ -46,6 +46,9 @@ var VenteSchema = mongoose.Schema({
 	},
 	statutVendeur: {
 		type: String
+	},
+	createdAt: {
+		type: String
 	}
 });
 
@@ -73,9 +76,12 @@ module.exports.getVenteByURL = function (url, callback) {
 	Vente.findOne(query, callback);
 }
 
-module.exports.getVenteByEmail = function (email, callback) {
-	var query = {
-		email: email
-	};
-	Vente.findOne(query, callback);
+module.exports.getVentesByEmail = function (email, callback) {
+	Vente.find({
+		$or: [{
+			emailAcheteur: email
+		}, {
+			emailVendeur: email
+		}]
+	}, callback);
 }
