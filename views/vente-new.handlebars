@@ -1,52 +1,186 @@
-<form>
-    <div class="form-row">
-        <label for="iam">Je suis:</label>
-        <div class="btn-group btn-group-lg" role="group" id="iam">
-            <button type="button" class="btn btn-primary">Acheteur</button>
-            <button type="button" class="btn btn-primary">Vendeur</button>
+<div class="container">
+    <form>
+        <div class="row">
+            <div class="form-group col">
+            </div>
+            <div class="form-group col">
+                <div class="btn-group btn-group-lg" role="group" id="iam">
+                    <button type="button" class="btn btn-primary" onclick="show('a')">J'achète</button>
+                    <button type="button" class="btn btn-primary" onclick="show('v')">Je vends</button>
+                </div>
+            </div>
+            <div class="form-group col">
+            </div>
         </div>
-    </div>
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            <label for="inputEmail4">Email</label>
-            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+    </form>
+
+    <!-- FORM 1-->
+
+    <form id="acheteur">
+        <div class="row">
+            <div class="form-group col-md-12">
+                <label for="inputEmail4">Email du vendeur</label>
+                <input type="email" class="form-control" id="inputEmail4">
+            </div>
         </div>
-        <div class="form-group col-md-6">
-            <label for="inputPassword4">Password</label>
-            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="numeroTel">Votre numéro de téléphone</label>
+                <input id="numeroTel" class="form-control">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputAddress">Votre addresse (adresse de livraison)</label>
+                <input id="user_input_autocomplete_address" name="user_input_autocomplete_address" class="form-control" placeholder="">
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <label for="inputAddress">Address</label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-    </div>
-    <div class="form-group">
-        <label for="inputAddress2">Address 2</label>
-        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-    </div>
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            <label for="inputCity">City</label>
-            <input type="text" class="form-control" id="inputCity">
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="montantVente">Montant de la vente (sans la livraison)</label>
+                <div class="input-group">
+                    <input id="montantVente" class="form-control" type="number" min="0" step="1">
+                    <span class="input-group-addon">€</span>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="montantLivraison">Montant de la livraison</label>
+                <div class="input-group">
+                    <input id="montantLivraison" class="form-control" type="number" min="0" step="1">
+                    <span class="input-group-addon">€</span>
+                </div>
+            </div>
         </div>
-        <div class="form-group col-md-4">
-            <label for="inputState">State</label>
-            <select id="inputState" class="form-control">
-                <option selected>Choose...</option>
-                <option>...</option>
-            </select>
+        <div class="row">
+            <div class="col-md-6 offset-md-6 text-right">
+                <b id="montantTotal">
+                </b>
+            </div>
         </div>
-        <div class="form-group col-md-2">
-            <label for="inputZip">Zip</label>
-            <input type="text" class="form-control" id="inputZip">
+        <button type="submit" class="btn btn-primary">Envoyer ma demande</button>
+    </form>
+
+    <!-- FORM 2-->
+
+    <form id="vendeur">
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">vendeur</label>
+                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputPassword4">Password</label>
+                <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <div class="form-check">
-            <label class="form-check-label">
-                <input class="form-check-input" type="checkbox"> Check me out
-            </label>
+        <div class="form-group">
+            <label for="inputAddress">Address</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
         </div>
-    </div>
-    <button type="submit" class="btn btn-primary">Sign in</button>
-</form>
+        <div class="form-group">
+            <label for="inputAddress2">Address 2</label>
+            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="inputCity">City</label>
+                <input type="text" class="form-control" id="inputCity">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputState">State</label>
+                <select id="inputState" class="form-control">
+                    <option selected>Choose...</option>
+                    <option>...</option>
+                </select>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputZip">Zip</label>
+                <input type="text" class="form-control" id="inputZip">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox"> Check me out
+                </label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Sign in</button>
+    </form>
+</div>
+
+<script>
+
+    document.getElementById("vendeur").style.display = "none";
+    document.getElementById("acheteur").style.display = "none";
+    function show(a) {
+        if (a == "a") {
+            document.getElementById("acheteur").style.display = "block";
+            document.getElementById("vendeur").style.display = "none";
+        }
+        else if (a == "v") {
+            document.getElementById("acheteur").style.display = "none";
+            document.getElementById("vendeur").style.display = "block";
+        }
+    }
+
+    function initializeAutocomplete(id) {
+        var element = document.getElementById(id);
+        if (element) {
+            var autocomplete = new google.maps.places.Autocomplete(element, { types: ['geocode'] });
+            google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
+        }
+    }
+
+    function onPlaceChanged() {
+        var place = this.getPlace();
+
+        // console.log(place);  // Uncomment this line to view the full object returned by Google API.
+
+        for (var i in place.address_components) {
+            var component = place.address_components[i];
+            for (var j in component.types) {  // Some types are ["country", "political"]
+                var type_element = document.getElementById(component.types[j]);
+                if (type_element) {
+                    type_element.value = component.long_name;
+                }
+            }
+        }
+    }
+
+    google.maps.event.addDomListener(window, 'load', function () {
+        initializeAutocomplete('user_input_autocomplete_address');
+    });
+
+    var vente, livraison, total, totalEtCommission;
+    total = $("#montantTotal").val();
+
+    function evaluerMontantTotal() {
+        if (vente && vente != "" && livraison && livraison != "") {
+            totalEtCommission = vente + livraison + (vente * 0.05);
+            $("#montantTotal").text("Montant total: " + totalEtCommission + "€ (dont " + (vente * 0.05) + "€ de frais)");
+        }
+        else if (vente && vente != "")
+            $("#montantTotal").text("");
+        else if (livraison && livraison != "")
+            $("#montantTotal").text("");
+    }
+    $("#montantVente").blur(function () {
+        vente = parseInt($("#montantVente").val());
+        evaluerMontantTotal();
+    });
+
+    $("#montantLivraison").blur(function () {
+        livraison = parseInt($("#montantLivraison").val());
+        evaluerMontantTotal();
+    });
+
+    // disable mousewheel on a input number field when in focus
+    // (to prevent Cromium browsers change the value when scrolling)
+    $('form').on('focus', 'input[type=number]', function (e) {
+        $(this).on('mousewheel.disableScroll', function (e) {
+            e.preventDefault()
+        })
+    })
+    $('form').on('blur', 'input[type=number]', function (e) {
+        $(this).off('mousewheel.disableScroll')
+    })
+</script>

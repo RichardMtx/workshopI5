@@ -1602,55 +1602,6 @@ p {
 	margin: 0 0 2rem 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-weight: 400;
-	line-height: 1.5;
-	margin: 0 0 1.5rem 0;
-}
-
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
-	color: inherit;
-	text-decoration: none;
-}
-
-h2 {
-	font-size: 1.75rem;
-	text-transform: uppercase;
-}
-
-@media screen and (max-width: 736px) {
-	h2 {
-		font-size: 1.5rem;
-	}
-}
-
-h3 {
-	font-size: 1.35rem;
-	text-transform: uppercase;
-}
-
-h4 {
-	font-size: 1.1rem;
-}
-
-h5 {
-	font-size: 0.9rem;
-}
-
-h6 {
-	font-size: 0.7rem;
-}
-
 sub {
 	font-size: 0.8rem;
 	position: relative;
@@ -1727,15 +1678,6 @@ a {
 
 strong,
 b {
-	color: #555;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
 	color: #555;
 }
 
@@ -2255,15 +2197,6 @@ table.alt tbody tr td {
 
 .wrapper.style1 strong,
 .wrapper.style1 b {
-	color: #ffffff;
-}
-
-.wrapper.style1 h1,
-.wrapper.style1 h2,
-.wrapper.style1 h3,
-.wrapper.style1 h4,
-.wrapper.style1 h5,
-.wrapper.style1 h6 {
 	color: #ffffff;
 }
 
