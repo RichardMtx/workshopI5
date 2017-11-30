@@ -1,4 +1,20 @@
 <div class="container">
-	<h4>Récapitulatif de la commande</h4>
-	<p>Il va falloir penser à valider</p>
+	<h4>Récapitulatif de la transaction</h4>
+
+	<span>Email de l'acheteur : {{vente.emailAcheteur}}</span><br>
+    <span>Numéro téléphone acheteur : {{vente.numeroTelAcheteur}}</span><br>
+    <span>Adresse de livraison : {{vente.adresseLivraison}}</span><br>
+    <span>Montant de la vente : {{vente.montantVente}}</span><br>
+    <span>Montant de la livraison : {{vente.montantLivraison}}</span><br>
+    <span>Montant total : {{vente.montantTotal}}</span><br>
+    <span>Email du vendeur : {{vente.emailVendeur}}</span><br>
+    <span>Téléphone du vendeur : {{vente.numeroTelVendeur}}</span><br>
+    <span>Adresse du vendeur : {{vente.adresseVendeur}}</span><br>
+    <span>Date dépot colis : {{vente.dateDepotColis}}</span><br><br>
+
+	<form id="validation" method="POST">
+		<input style="display:none;" value="validationTransaction" id="validationTransaction" name="validationTransaction">
+		<button type="submit" class="center btn btn-primary">Accepter la transaction</button>
+	</form>
+		<p>En cliquand sur ce bouton j'atteste avoir lu et avoir acceper les conditions générales de vente</p>
 </div>
