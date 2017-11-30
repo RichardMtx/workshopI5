@@ -2,7 +2,8 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-
+var moment = require('moment')
+moment.locale('fr')
 var Vente = require('../models/vente');
 var User = require('../models/user');
 
@@ -58,7 +59,8 @@ router.post('/new', ensureAuthenticated, function (req, res) {
 		montantLivraison: data.montantLivraison,
 		montantTotal: data.montantTotal,
 		state: "NEWBYACHETEUR",
-		url: url
+		url: url,
+		createdAt: moment().format('Do MMMM  YYYY')
 	});
 
 	Vente.createVente(newVente, function (err, vente) {

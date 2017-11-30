@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-
 var Vente = require('../models/vente');
 var User = require('../models/user');
 
@@ -22,7 +21,15 @@ function ensureAuthenticated(req, res, next) {
 
 // Get dashboard
 router.get('/dashboard', ensureAuthenticated, function (req, res) {
-	res.render('dashboard');
+	Vente.getVentesByEmail(req.user.email, function (err, ventes) {
+		if (err)
+			console.log("Erreur de récupération des ventes")
+		else {
+			res.render('dashboard', {
+				ventes: ventes
+			});
+		}
+	});
 });
 
 // Get fonctionnement
