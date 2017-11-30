@@ -1,17 +1,25 @@
-<!-- Ca va que le dashboard est fini -->
-<h2 class="page-header">Dashboard</h2>
-<p>Welcome to your dashboard</p>
+<div class="row">
+    <a href="/ventes/new" class="button btn-primary">Créer une nouvelle vente</a></div>
 
-<a href="/ventes/new">
-    <button class="btn btn-primary">Créer une nouvelle vente</button>
-</a>
-
+<h1>Mes ventes</h1>
 {{#each ventes}}
-<div class="card">
-    <div class="card-block">
-        <p>Vente crée le {{this.createdAt}}</p>
-        <p>Montant de la vente {{this.montantTotal}}€</p>
-        <a href="/ventes/{{this.url}}" class="card-link">Voir la vente</a>
+<div class="row form-group">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-block">
+                <div class="row ">
+                    <div class="col-lg-4 col-lg-offset-4 align-self-center">
+                        Vente crée le {{this.createdAt}}
+                    </div>
+                    <div class="col-lg-4 col-lg-offset-4 align-self-center">
+                        Montant de la vente {{this.montantTotal}}€
+                    </div>
+                    <div class="col-lg-4 col-lg-offset-4 align-self-center text-right">
+                        <a href="/ventes/{{this.url}}" class="button btn-primary">Voir la vente</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-<br> {{/each}}
+{{/each}}

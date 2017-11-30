@@ -1,5 +1,6 @@
 <html>
 <!-- Ca va que la vie est belle -->
+
 <head>
 	<title>Les Hérissons by CA</title>
 	<meta charset="utf-8" />
@@ -12,9 +13,8 @@
 
 <body>
 
-	{{> menu }}
-
-	{{!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="alert_banner" aria-hidden="true">
+	{{> menu }} {{!--
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="alert_banner" aria-hidden="true">
 		<div class="modal-dialog" role="document" style="top:20%!important">
 			<div class="modal-content">
 				<div class="modal-body" style="background-color:rgba(211, 47, 47, 1); color:white">
@@ -26,12 +26,11 @@
 		</div>
 	</div> --}}
 
-	<section id="banner">	
+	<section id="banner">
 		<video id="lhmp4" width="100%" height="100%" src="/videos/lesherissons.mp4" frameborder="0"></video>
-		<a href="#" id="close" class="button special scrolly">X</a>	
-		<div class="inner">	
-			<a href="#" id="video" class="button special scrolly">Je découvre le service</a>
-			{{!-- <button id="video" class="button special scrolly">Je découvre le service</button> --}}
+		<a href="#" id="close" class="button special scrolly">X</a>
+		<div class="inner">
+			<a href="#" id="video" class="button special scrolly">Je découvre le service</a> {{!-- <button id="video" class="button special scrolly">Je découvre le service</button>			--}}
 		</div>
 	</section>
 
@@ -49,39 +48,41 @@
 							<p>pour effectuer vos transactions entre particuliers en toute sécurité</p>
 						</header>
 						<hr />
-						<h3 class="centered_content"> Vous achetez ou vendez régulièrement sur des sites de vente de particuliers à particuliers ? <br>Nous avons une solution simple pour
-                            payer ou vous faire payer en toute sécurité ! </h3>
-                            
-                            <p class="centered_content">Le service <strong>Les Hérissons</strong> vous permet de sécuriser vos transaction entre particuliers.</p>
+						<h3 class="centered_content"> Vous achetez ou vendez régulièrement sur des sites de vente de particuliers à particuliers ? <br>Nous avons une solution
+							simple pour payer ou vous faire payer en toute sécurité ! </h3>
+
+						<p class="centered_content">Le service <strong>Les Hérissons</strong> vous permet de sécuriser vos transaction entre particuliers.</p>
 					</div>
-                    
-                    <section id="two" class="wrapper style3">
-                        <div class="inner">
-                            <div id="flexgrid">
-                                <div>
-                                    <header>
-                                        <h3>Moderne</h3>
-                                    </header>
-                                    <p>Pensé et conçu avec de nouvelles technologies avancées.</p>
-                                </div>
-                                <div>
-                                    <header>
-                                        <h3>Simple & Rapide</h3>
-                                    </header>
-                                    <p>Une interface intuitive qui ne vous demande que le nécessaire. Vous gagnez du temps !</p>
-                                    <a href="/fonctionnement"><button type="button" class="btn btn-success" data-dismiss="modal">Je découvre le service</button></a>
-                                </div>
-                                <div>
-                                    <header>
-                                        <h3>Sécurisé</h3>
-                                    </header>
-                                    <p>Des transactions sécurisées en toutes circonstances.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+
+					<section id="two" class="wrapper style3">
+						<div class="inner">
+							<div id="flexgrid">
+								<div>
+									<header>
+										<h3>Moderne</h3>
+									</header>
+									<p>Pensé et conçu avec de nouvelles technologies avancées.</p>
+								</div>
+								<div>
+									<header>
+										<h3>Simple & Rapide</h3>
+									</header>
+									<p>Une interface intuitive qui ne vous demande que le nécessaire. Vous gagnez du temps !</p>
+									<a href="/fonctionnement" id="video" class="button special scrolly">Je découvre le service</a> {{!-- <button id="video"
+									 class="button special scrolly">Je découvre le service</button> --}}
+
+								</div>
+								<div>
+									<header>
+										<h3>Sécurisé</h3>
+									</header>
+									<p>Des transactions sécurisées en toutes circonstances.</p>
+								</div>
+							</div>
+						</div>
+					</section>
 				</div>
-                
+
 			</div>
 		</div>
 	</section>
@@ -106,30 +107,30 @@
 	<script src="/js/bootstrap.min.js"></script>
 	<script>
 		//$('#myModal').modal('show');
-		$("#video").on('click', function(){	
-			$("#lhmp4").css('overflow','visible');				
-			$("#lhmp4").css('opacity','1');
-			$("#video").css('display','none');
+		$("#video").on('click', function () {
+			$("#lhmp4").css('overflow', 'visible');
+			$("#lhmp4").css('opacity', '1');
+			$("#video").css('display', 'none');
 			$('#lhmp4').get(0).play();
-			$('#close').css('overflow','visible');
-			$('#close').css('opacity','1');
-			setTimeout(function(){
-				$("#lhmp4").css('opacity','0');
-				$('#lhmp4').css('overflow','hidden');
-				$("#video").css('display','block');
-				$('#close').css('overflow','hidden');
-				$('#close').css('opacity','0');
+			$('#close').css('overflow', 'visible');
+			$('#close').css('opacity', '1');
+			setTimeout(function () {
+				$("#lhmp4").css('opacity', '0');
+				$('#lhmp4').css('overflow', 'hidden');
+				$("#video").css('display', 'block');
+				$('#close').css('overflow', 'hidden');
+				$('#close').css('opacity', '0');
 			}, 51000);
-			
+
 
 		});
-		$("#close").on('click', function(){
+		$("#close").on('click', function () {
 			$('#lhmp4').get(0).pause();
-			$("#lhmp4").css('opacity','0');
-			$('#lhmp4').css('overflow','hidden');
-			$("#video").css('display','block');
-			$('#close').css('overflow','hidden');
-			$('#close').css('opacity','0');	
+			$("#lhmp4").css('opacity', '0');
+			$('#lhmp4').css('overflow', 'hidden');
+			$("#video").css('display', 'block');
+			$('#close').css('overflow', 'hidden');
+			$('#close').css('opacity', '0');
 		});
 	</script>
 
