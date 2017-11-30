@@ -45,19 +45,34 @@ function makeid() {
 
 // Get new vente
 router.post('/new', ensureAuthenticated, function (req, res) {
-	req.body.emailAcheteur = req.user.email;
+
+	var state = '';
+
+	if(req.body.whoami == 'acheteur'){
+		req.body.emailAcheteur = req.user.email;
+		state = "NEWBYACHETEUR";
+	}
+	if(req.body.whoami == 'vendeur'){
+		req.body.emailVendeur = req.user.email;
+		state = "NEWBYVENDEUR";
+	}
+
 	var data = req.body;
 	var url = makeid();
 
 	var newVente = new Vente({
 		emailAcheteur: data.emailAcheteur,
 		emailVendeur: data.emailVendeur,
-		numeroTel: data.numeroTel,
+		numeroTelAcheteur: data.numeroTel,
 		adresseLivraison: data.adresseLivraison,
 		montantVente: data.montantVente,
 		montantLivraison: data.montantLivraison,
 		montantTotal: data.montantTotal,
-		state: "NEWBYACHETEUR",
+		numeroTelVendeur: data.telVendeur,
+		adresseVendeur: data.adresseVendeur,
+		dateDepotColis: data.datedepotVendeur,
+		state: state,
+		createdTypeBy: data.whoami,
 		url: url
 	});
 
