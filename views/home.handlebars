@@ -31,6 +31,7 @@
 		<a href="#" id="close" class="button special scrolly">X</a>	
 		<div class="inner">	
 			<a href="#" id="video" class="button special scrolly">Je découvre le service</a>
+			{{!-- <button id="video" class="button special scrolly">Je découvre le service</button> --}}
 		</div>
 	</section>
 
@@ -105,7 +106,7 @@
 	<script src="/js/bootstrap.min.js"></script>
 	<script>
 		//$('#myModal').modal('show');
-		$("#video").one('click', function(){	
+		$("#video").on('click', function(){	
 			$("#lhmp4").css('overflow','visible');				
 			$("#lhmp4").css('opacity','1');
 			$("#video").css('display','none');
@@ -122,7 +123,7 @@
 			
 
 		});
-		$("#close").one('click', function(){
+		$("#close").on('click', function(){
 			$('#lhmp4').get(0).pause();
 			$("#lhmp4").css('opacity','0');
 			$('#lhmp4').css('overflow','hidden');
