@@ -38,11 +38,33 @@
 					vente: vente
 				});
 			} else if (((vente.state == 'COMPLETED') && vente.statutAcheteur != 'true') || ((vente.state == 'COMPLETED') && vente.statutVendeur != 'true')) {
-				console.log('test1 :' + vente.statutVendeur);
-				console.log('test2 :' + vente.statutAcheteur);
-				res.render('vente-complete-validation', {
-					vente: vente
-				});
+				if (req.user.email == vente.emailAcheteur) {
+					var whoami_complete = true;
+
+					var statut_complete = false;
+
+					if(vente.statutAcheteur == 'true'){
+						statut_complete = true;
+					}
+					res.render('vente-complete-validation', {
+						vente: vente, whoami_complete: whoami_complete, statut_complete: statut_complete
+					});
+				}
+				else if (req.user.email == vente.emailVendeur){
+					var whoami_complete = false;
+
+					var statut_complete = false;
+					if(vente.statutVendeur == 'true'){
+						statut_complete = true;
+					}
+
+					res.render('vente-complete-validation', {
+						vente: vente, whoami_complete: whoami_complete, statut_complete: statut_complete
+					});
+				}
+				else{
+					res.redirect('/');
+				}
 			} else if ((vente.state == 'COMPLETED') && (vente.statutVendeur == 'true' && vente.statutAcheteur == 'true')) {
 				if (req.user.email == vente.emailAcheteur) {
 
@@ -67,7 +89,7 @@
 			var data = req.body;
 
 			var updateVente = {
-				emailAcheteur: data.emailAcheteur,
+				emailAcheteur: req.user.email,
 				numeroTelAcheteur: data.numeroTel,
 				adresseLivraison: data.adresseLivraison,
 				montantVente: data.montantVente,
@@ -90,6 +112,7 @@
 			var data = req.body;
 
 			var updateVente = {
+				emailVendeur: req.user.email,
 				dateDepotColis: data.datedepotVendeur,
 				numeroTelVendeur: data.telVendeur,
 				adresseVendeur: data.adresseVendeur,

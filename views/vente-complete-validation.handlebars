@@ -12,9 +12,29 @@
     <span>Adresse du vendeur : {{vente.adresseVendeur}}</span><br>
     <span>Date dépot colis : {{vente.dateDepotColis}}</span><br><br>
 
-    <form id="validation" method="POST">
-        <input style="display:none;" value="validationTransaction" id="validationTransaction" name="validationTransaction">
-        <button type="submit" class="center btn btn-primary">Accepter la transaction</button>
-    </form>
-    <p>En cliquant sur ce bouton, vous attestez avoir lu et accepté les conditions générales de vente</p>
+    {{#if whoami_complete}}
+        {{#if statut_complete}}
+            <h4>STATUT</h4>
+           <p>En tant qu'acheteur, vous avez déjà validé, vous attendez le vendeur</p>
+        {{else}}
+             <form id="validation" method="POST">
+                <input style="display:none;" value="validationTransaction" id="validationTransaction" name="validationTransaction">
+                <button type="submit" class="center btn btn-primary">Accepter la transaction</button>
+            </form>
+
+            <p>En cliquant sur ce bouton, vous attestez avoir lu et accepté les conditions générales de vente</p>
+        {{/if}}
+    {{else}}
+        {{#if statut_complete}}
+            <h4>STATUT</h4>
+           <p>En tant que vendeur, vous avez déjà validé, vous attendez l'acheteur</p>
+        {{else}}
+             <form id="validation" method="POST">
+                <input style="display:none;" value="validationTransaction" id="validationTransaction" name="validationTransaction">
+                <button type="submit" class="center btn btn-primary">Accepter la transaction</button>
+            </form>
+
+            <p>En cliquant sur ce bouton, vous attestez avoir lu et accepté les conditions générales de vente</p>
+        {{/if}}
+    {{/if}}
 </div>
