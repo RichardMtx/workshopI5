@@ -24,6 +24,10 @@
 
             <p>En cliquant sur ce bouton, vous attestez avoir lu et accepté les conditions générales de vente</p>
         {{/if}}
+        {{#if other_statut}}
+            <h4>STATUT</h4>
+            <p>Le vendeur a validé</p>
+        {{/if}}
     {{else}}
         {{#if statut_complete}}
             <h4>STATUT</h4>
@@ -35,6 +39,10 @@
             </form>
 
             <p>En cliquant sur ce bouton, vous attestez avoir lu et accepté les conditions générales de vente</p>
+        {{/if}}
+         {{#if other_statut}}
+            <h4>STATUT</h4>
+            <p>L'acheteur a validé</p>
         {{/if}}
     {{/if}}
 </div>

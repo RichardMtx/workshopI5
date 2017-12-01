@@ -40,18 +40,28 @@
 			} else if (((vente.state == 'COMPLETED') && vente.statutAcheteur != 'true') || ((vente.state == 'COMPLETED') && vente.statutVendeur != 'true')) {
 				if (req.user.email == vente.emailAcheteur) {
 					var whoami_complete = true;
+					var other_statut = false;
 
 					var statut_complete = false;
+
+					if (vente.statutVendeur == 'true'){
+						other_statut = true;
+					}
 
 					if(vente.statutAcheteur == 'true'){
 						statut_complete = true;
 					}
 					res.render('vente-complete-validation', {
-						vente: vente, whoami_complete: whoami_complete, statut_complete: statut_complete
+						vente: vente, whoami_complete: whoami_complete, statut_complete: statut_complete, other_statut: other_statut
 					});
 				}
 				else if (req.user.email == vente.emailVendeur){
 					var whoami_complete = false;
+					var other_statut = false;
+
+					if (vente.statutAcheteur == 'true'){
+						other_statut = true;
+					}
 
 					var statut_complete = false;
 					if(vente.statutVendeur == 'true'){
@@ -59,7 +69,7 @@
 					}
 
 					res.render('vente-complete-validation', {
-						vente: vente, whoami_complete: whoami_complete, statut_complete: statut_complete
+						vente: vente, whoami_complete: whoami_complete, statut_complete: statut_complete, other_statut: other_statut
 					});
 				}
 				else{
